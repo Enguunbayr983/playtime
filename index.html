@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playtime</title>
+  </head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Anybody", sans-serif;
+    }
+    body {
+      background-color: #0f0f1b;
+      font-size: 20px;
+      color: pink;
+    }
+    .page {
+      width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      padding: 30px;
+      box-shadow: 0 1px 10px #7d6e8833;
+    }
+    .headtext {
+      color: #cfc2d6;
+      gap: 15px;
+      display: flex;
+    }
+    .headertext {
+      color: #cfc2d6;
+      gap: 15px;
+      display: flex;
+      font-size: 16px;
+    }
+    .headertext:hover {
+      color: #ddb7ff;
+      transition: 0.2s;
+      text-decoration: underline;
+      line-height: 16px;
+    }
+    .ticketbutton {
+      border: none;
+      background-color: #ddb7ff;
+      color: #490080;
+      border-radius: 33px;
+      width: 160px;
+      height: 35px;
+      box-shadow: 0 0 25px rgba(21, 142, 234, 0.8);
+    }
+    .ticketbutton:hover {
+      box-shadow: 0 0 45px rgba(21, 142, 234, 0.8);
+      transition: 0.25s;
+    }
+    a {
+      gap: 20px;
+    }
+    .herosection {
+      width: 100%;
+      display: flex;
+    }
+    .sidebar {
+      width: 50%;
+      background-color: #0f0f1b;
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .sidebutton {
+      border: none;
+      background-color: #ddb7ff;
+      color: #490080;
+      border-radius: 33px;
+      width: 220px;
+      height: 60px;
+      box-shadow: 0 0 45px rgba(21, 142, 234, 0.8);
+    }
+    .sidebutton:hover {
+      box-shadow: 0 0 60px rgba(21, 142, 234, 0.8);
+      transition: 0.25s;
+    }
+    .heroimg {
+      width: 50%;
+      height: 30%;
+      background-color: #0f0f1b;
+    }
+    .midtext {
+      font-size: 80px;
+      color: #ddb7ff;
+    }
+    .text {
+      font-size: 20px;
+      color: rgb(238, 169, 214);
+    }
+    .bigtext {
+      font-size: 40px;
+      color: #ddb7ff;
+    }
+    .showcase {
+      width: 100%;
+      height: 25%;
+      background-color: #0f0f1b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .shows {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      background-color: #0f0f1b;
+    }
+
+    img {
+      border-radius: 10%;
+    }
+
+    .perks {
+      width: 100%;
+      height: 50%;
+      background-color: #0d0d1980;
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      align-items: center;
+    }
+    .about {
+      background-color: #1f1e2b;
+      color: white;
+      display: flex;
+      width: 30%;
+      justify-content: start;
+      align-items: center;
+      width: 34vw;
+      border-radius: 33px;
+      height: 60px;
+      padding: 40px;
+      gap: 24px;
+    }
+    .about:hover {
+      box-shadow: 1px 1px 20px rgba(136, 109, 109, 0.18);
+    }
+    .emoji {
+      background-color: #ddb7ff1a;
+      border-radius: 33px;
+      width: 12%;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .icons {
+      width: 16px;
+      height: 16px;
+    }
+    .schedule {
+      width: 100%;
+      height: 15%;
+      background-color: #0d0d1980;
+      display: flex;
+      gap: 15px;
+    }
+    .buttonborder {
+      background: none;
+      border: 1px white solid;
+    }
+    .daybutton {
+      border: none;
+
+      color: #cfc2d6;
+      border-radius: 33px;
+      width: 90px;
+      height: 30px;
+      background: none;
+      border: 1px #4d43544d solid;
+      transition: 0.4s;
+    }
+    .daybutton:hover {
+      background-color: #5d3a7e;
+      transition: 0.4s;
+      color: #b977f3;
+    }
+    .header3 {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .stage {
+      width: 100%;
+      height: 114px;
+      background-color: #1f1e2b;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      border-radius: 33px;
+      align-items: center;
+      padding: 24px;
+    }
+    .stage:hover {
+      box-shadow: 1px 1px 30px rgba(183, 59, 181, 0.18);
+    }
+    .stagetext {
+      display: flex;
+      gap: 5px;
+    }
+    .inner {
+      display: flex;
+      justify-content: space-between;
+
+      flex-direction: column;
+    }
+    .background {
+      background-color: #383846;
+      border-radius: 33px;
+      height: 27px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      width: 89px;
+      font-size: 12px;
+    }
+    #time {
+      color: #ddb7ff;
+      font-size: 40px;
+    }
+
+    .mainschedule {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bottom {
+      width: 100%;
+      display: flex;
+
+      gap: 50px;
+    }
+    .bottomhalf {
+      width: 50%;
+      background-color: #0f0f1b;
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .bottomgrand {
+      background-color: #1f1e2b80;
+      border-radius: 33px;
+      width: 100%;
+      height: 318px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bottomfather {
+      border-radius: 33px;
+      width: 90%;
+      height: 236px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .bottomchild {
+      background-color: #1f1e2b;
+      border-radius: 33px;
+      width: 237px;
+      display: flex;
+      gap: 10px;
+      height: 100px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 14px;
+    }
+    .bottomchild:hover {
+      box-shadow: 1px 1px 20px rgba(136, 109, 109, 0.18);
+    }
+    .separatechild {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .bottomrightgrand {
+      background-color: #1f1e2b80;
+      border-radius: 33px;
+      width: 100%;
+      height: 318px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 348px;
+    }
+    .bottomrightfather {
+      border-radius: 33px;
+      width: 90%;
+      height: 236px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .bottomrightchild {
+      background-color: #1f1e2b;
+      border-radius: 33px;
+      width: 100%;
+      display: flex;
+      height: 100px;
+      align-items: center;
+      justify-content: start;
+      color: white;
+      font-size: 12px;
+      padding-left: 30px;
+    }
+    .bottomrightchild:hover {
+      box-shadow: 1px 1px 20px rgba(136, 109, 109, 0.18);
+    }
+    .footer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      height: 166px;
+      border-top: 1px #4d435433 solid;
+      padding-top: 40px;
+    }
+    .imgtextbox {
+      width: 382px;
+      height: 382px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      transition: 0.25s;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
+      border-radius: 33px;
+      background-size: cover;
+      background-position: start;
+    }
+
+    .imgtextbox:hover {
+      transition: 0.25s;
+      box-shadow: 0 0 45px rgba(168, 85, 247, 0.8);
+    }
+
+    .onimg {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .imgtextbox:nth-child(1) {
+      background-image: url("nova-sky.png");
+    }
+
+    .imgtextbox:nth-child(2) {
+      background-image: url("dj-pulse.png");
+    }
+
+    .imgtextbox:nth-child(3) {
+      background-image: url("the-echoes.png");
+    }
+    .imgtext {
+      background: none;
+      color: #ddb7ff;
+      border: none;
+    }
+    .normaltext {
+      color: #cfc2d6;
+      font-size: 20px;
+    }
+    .bottomtext {
+      color: white;
+      font-size: 14px;
+    }
+    .bottomicons {
+      width: 29px;
+      height: 29px;
+    }
+    #imgtextborder {
+      border: #b76dff33 1px solid;
+      background-color: #b76dff33;
+      color: #ddb7ff;
+    }
+    .inchild {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      padding-top: 25px;
+    }
+    #inchildimg {
+      padding-bottom: 25px;
+    }
+    .littletext {
+      color: #cfc2d6;
+      font-size: 12px;
+    }
+    .fixtext {
+      padding-top: 7px;
+    }
+    #stagefont {
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+  <body>
+    <div class="page">
+      <div class="navbar">
+        <div>
+          <img
+            style="width: 150px; height: 36px"
+            src="playtimelogo.png"
+            alt=""
+          />
+        </div>
+        <div class="headtext">
+          <div class="headertext">Schedule</div>
+          <div class="headertext">Lineup</div>
+          <div class="headertext">Tickets</div>
+        </div>
+        <button class="ticketbutton">Get Tickets</button>
+      </div>
+      <div class="herosection">
+        <div class="sidebar">
+          <h1 id="titlefont" class="midtext">PLAYTIME FESTIVAL</h1>
+          <div style="display: flex; justify-content: start; gap: 15px">
+            <img style="width: 16px; height: 16px" src="date-icon.png" alt="" />
+            <span style="color: #adc6ff">JULY-15-17,2024</span>
+            <img style="width: 16px; height: 16px" src="loc-icon.png" alt="" />
+            <span style="color: #adc6ff">NEON-CITY-PARK</span>
+          </div>
+          <span class="text" style="width: 80%; color: #cfc2d6"
+            >The ultimate summer music experience for the next generation. Three
+            days of non-stop beats, vibrant lights, and unforgettable
+            memories.</span
+          >
+          <div style="display: flex; justify-content: start">
+            <button
+              class="sidebutton"
+              style="
+                margin-top: auto;
+                font-size: 25px;
+                background-color: #adc6ff;
+              "
+            >
+              Join the beat <img src="button-icon.png" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="heroimg">
+          <img
+            style="
+              height: 30vw;
+              width: 100%;
+              transition: 0.25s;
+              box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
+            "
+            src="heroimg.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="showcase">
+        <div style="font-weight: bold" class="bigtext">MEET THE HEADLINERS</div>
+        <div class="text">
+          The biggest acts lighting up the main stage summer.
+        </div>
+        <div class="shows">
+          <div class="imgtextbox">
+            <div class="onimg">
+              <button
+                style="
+                  border: #adc6ff4d 1px solid;
+                  background-color: #b76dff33;
+
+                  color: #ddb7ff;
+                "
+                id="imgtextborder"
+                class="daybutton"
+              >
+                Pop / Synth
+              </button>
+              <span style="color: white" class="bigtext">Nova Sky</span>
+              <div style="display: flex">
+                <button class="imgtext">VIEW BIO</button>
+                <img class="icons" src="inimg.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="imgtextbox">
+            <div class="onimg">
+              <button
+                style="
+                  border: #adc6ff4d 1px solid;
+                  background-color: #0566d933;
+
+                  color: #adc6ff;
+                "
+                id="imgtextborder"
+                class="daybutton"
+              >
+                EDM / House
+              </button>
+              <span style="color: white" class="bigtext">DJ Pulse</span>
+              <div style="display: flex">
+                <button class="imgtext">VIEW BIO</button>
+                <img class="icons" src="inimg.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="imgtextbox">
+            <div class="onimg">
+              <button
+                style="
+                  border: #f751a133 1px solid;
+                  background-color: #f751a133;
+
+                  color: #ffb0cd;
+                "
+                id="imgtextborder"
+                class="daybutton"
+              >
+                Indie Rock
+              </button>
+              <span style="color: white" class="bigtext">The Echoes</span>
+              <div style="display: flex">
+                <button class="imgtext">VIEW BIO</button>
+                <img class="icons" src="inimg.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="perks">
+        <div class="about">
+          <div class="emoji">
+            <img class="icons" src="date-icon.png" alt="" />
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <div class="littletext">Date</div>
+            July-15-17
+          </div>
+        </div>
+        <div class="about">
+          <div class="emoji">
+            <img class="icons" src="loc-icon.png" alt="" />
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <div class="littletext">Location</div>
+            Neon City
+          </div>
+        </div>
+        <div class="about">
+          <div class="emoji">
+            <img class="icons" src="price-icon.png" alt="" />
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <div class="littletext">Price</div>
+            $99(3day pass)
+          </div>
+        </div>
+      </div>
+      <div class="schedule">
+        <div class="header3">
+          <h1 class="bigtext">FESTIVAL SCHEDULE</h1>
+          <div>
+            <button class="daybutton">Day 1</button>
+            <button class="daybutton">Day 2</button>
+            <button class="daybutton">Day 3</button>
+          </div>
+        </div>
+      </div>
+      <div class="mainschedule">
+        <div class="stage">
+          <div
+            id="time"
+            ;
+            style="font-size: 28px; border-right: #383846 solid 1px"
+          >
+            2:00PM
+          </div>
+          <div class="inner"></div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              width: 20%;
+              color: #e3e0f2;
+              font-size: 35px;
+            "
+            id="time"
+          >
+            Nova sky
+            <div class="stagetext">
+              <img class="icons" src="loc-icon.png" alt="" />
+              <div class="normaltext">Main stage</div>
+            </div>
+          </div>
+          <div class="background">Main stage</div>
+        </div>
+        <div class="stage">
+          <div
+            id="time"
+            style="
+              color: #ffb0cd;
+              font-size: 28px;
+              border-right: #383846 1px solid;
+            "
+          >
+            5:00PM
+          </div>
+          <div class="inner"></div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              width: 20%;
+              color: #e3e0f2;
+              font-size: 35px;
+            "
+            id="time"
+          >
+            The Echoes
+            <div class="stagetext">
+              <img class="icons" src="loc-icon.png" alt="" />
+              <div class="normaltext">Groove Arena</div>
+            </div>
+          </div>
+          <div class="background">Main Stage</div>
+        </div>
+        <div class="stage">
+          <div
+            id="time"
+            style="
+              color: #adc6ff;
+              font-size: 28px;
+              border-right: #383846 1px solid;
+            "
+          >
+            9:00PM
+          </div>
+          <div class="inner"></div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              width: 20%;
+              color: #e3e0f2;
+              font-size: 35px;
+            "
+            id="time"
+          >
+            DJ Pulse
+            <div class="stagetext">
+              <img class="icons" src="loc-icon.png" alt="" />
+              <div class="normaltext">Neon Dome</div>
+            </div>
+          </div>
+          <div class="background">Main stage</div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="bottomhalf">
+          <div>
+            <h1 class="bigtext">OUR SPONSORS</h1>
+          </div>
+          <div class="bottomgrand">
+            <div class="bottomfather">
+              <div class="separatechild">
+                <div class="bottomchild">
+                  <img class="bottomicons" src="leftchild1.png" alt="" />
+
+                  <div class="bottomtext">SOUNDWAVE AUDIO</div>
+                </div>
+                <div class="bottomchild">
+                  <img class="bottomicons" src="leftchild2.png" alt="" />
+
+                  <div class="bottomtext">QUANTUM CONNECTIVITY</div>
+                </div>
+              </div>
+              <div class="separatechild">
+                <div class="bottomchild">
+                  <img class="bottomicons" src="leftchild3.png" alt="" />
+
+                  <div class="bottomtext">ECLIPSE STAGE</div>
+                </div>
+                <div class="bottomchild">
+                  <img class="bottomicons" src="leftchild4.png" alt="" />
+
+                  <div class="bottomtext">HARMONY FINANCIAL</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottomhalf">
+          <div>
+            <h1 class="bigtext">STRATEGIC PARTNERS</h1>
+          </div>
+          <div class="bottomrightgrand">
+            <div class="bottomrightfather">
+              <div class="bottomrightchild">
+                <div class="inchild">
+                  <img id="inchildimg" src="rightchild1.png" alt="" />
+                  <div class="fixtext">SONIC SYNC MEDIA</div>
+                </div>
+              </div>
+              <div class="bottomrightchild">
+                <div class="inchild">
+                  <img id="inchildimg" src="rightchild2.png" alt="" />
+                  <div class="fixtext">NEXUS AUDIO TECH</div>
+                </div>
+              </div>
+              <div class="bottomrightchild">
+                <div class="inchild">
+                  <img id="inchildimg" src="rightchild3.png" alt="" />
+                  <div class="fixtext">STREAMFLOW LIVE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div>
+          <img
+            style="width: 150px; height: 36px"
+            src="playtimelogo.png"
+            alt=""
+          />
+        </div>
+        <div style="color: #cfc2d6; gap: 15px; display: flex; font-size: 15px">
+          <a>2024 NEON BEAT FESTIVAL. ALL RIGHTS RESERVED</a>
+        </div>
+        <div style="display: flex; justify-content: end">
+          <button class="daybutton">Privacy</button>
+          <button class="daybutton">Terms</button>
+          <button class="daybutton">Safety</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
